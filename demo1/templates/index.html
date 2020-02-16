@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>投票问题</title>
+</head>
+<body>
+    <div>
+        <ul>
+
+            {% for i in q1 %}
+            <a href="{% url 'vote:detail' i.id%}">
+                <li>
+                    {{i.title}}
+                </li>
+            </a>
+            {% endfor %}
+        </ul>
+    </div>
+
+</body>
+</html>

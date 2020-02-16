@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>投票详情</title>
+</head>
+<body>
+    <div>
+        <h1>问题:{{answer.title}}</h1>
+        <ul>
+            <form action="{% url 'vote:result' answer.id %}" method="post">
+                {% for i in answer.option_set.all %}
+                <li><input type="radio" value="{{i.id}}" name="content" checked>{{i.content}}</li>
+                {% endfor %}
+                <p><input type="submit" value="提交"></p>
+            </form>
+        </ul>
+        <p><a href="{% url 'vote:polls' %}">返回列表</a></p>
+    </div>
+
+</body>
+</html>
